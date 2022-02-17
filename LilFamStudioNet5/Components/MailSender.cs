@@ -11,8 +11,8 @@ namespace LilFamStudioNet5.Components
     public class MailSender
     {
 
-        private const string emailDomain = "info@stgonline-net.ru";
-        private const string emailDomainPassword = "jDPewlk3@54";
+        private const string emailDomain = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        private const string emailDomainPassword = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
         public void sendMailToUser(string username, string title, string messageHTML)
         {
@@ -37,7 +37,7 @@ namespace LilFamStudioNet5.Components
                 m.Body = messageHtml;
                 m.IsBodyHtml = true;
 
-                SmtpClient smtp = new SmtpClient("wpl42.hosting.reg.ru", 587);
+                SmtpClient smtp = new SmtpClient("XXXXXXXXXXXXXXXXXXXXXXXXXXX", 587);
 
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new NetworkCredential(emailDomain, emailDomainPassword);

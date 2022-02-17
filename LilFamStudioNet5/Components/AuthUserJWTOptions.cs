@@ -11,7 +11,7 @@ namespace LilFamStudioNet5.Components
     {
         public const string ISSUER = "LilFamNATION"; // издатель токена
         public const string AUDIENCE = "User"; // потребитель токена
-        const string KEY = "doF%#iaf9a3*0DNAfrps39SAf9a3jFAP3";   // ключ для шифрации
+        const string KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";   // ключ для шифрации
         public const int LIFETIME = 60 * 24 * 365; // время жизни токена в минутах
         public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {
