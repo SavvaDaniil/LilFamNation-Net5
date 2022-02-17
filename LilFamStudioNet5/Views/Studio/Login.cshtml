@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Вход";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+
+
+...

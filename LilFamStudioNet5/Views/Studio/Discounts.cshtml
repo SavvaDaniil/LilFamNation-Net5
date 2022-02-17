@@ -1,0 +1,14 @@
+﻿@using LilFamStudioNet5.ViewModels;
+@using LilFamStudioNet5.ViewModels.Discount;
+@model JsonAnswerStatus;
+
+@{
+    ViewData["Title"] = "Скидки - LilFam Studio";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+...

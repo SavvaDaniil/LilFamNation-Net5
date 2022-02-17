@@ -1,0 +1,13 @@
+﻿@using LilFamStudioNet5.ViewModels.Admin
+@model AdminProfileViewModel;
+
+@{
+    ViewData["Title"] = "Профиль";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+...

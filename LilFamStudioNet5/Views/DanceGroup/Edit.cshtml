@@ -1,0 +1,20 @@
+﻿@using LilFamStudioNet5.ViewModels;
+@using LilFamStudioNet5.ViewModels.DanceGroup;
+@using LilFamStudioNet5.ViewModels.Teacher;
+@using LilFamStudioNet5.ViewModels.Branch;
+@using LilFamStudioNet5.ViewModels.DanceGroupDayOfWeek;
+@using LilFamStudioNet5.ViewModels.Abonement;
+@model JsonAnswerStatus;
+
+@{
+    Layout = "_LayoutEdit";
+    ViewData["Title"] = "Редактирование группы - LilFam Studio";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+
+...

@@ -1,0 +1,14 @@
+﻿@using LilFamStudioNet5.ViewModels;
+@using LilFamStudioNet5.ViewModels.AbonementDynamicDateMustBeUsedTo;
+@model JsonAnswerStatus;
+
+@{
+    Layout = "_LayoutEdit";
+    ViewData["Title"] = "Редактирование абонемента - LilFam Studio";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+...

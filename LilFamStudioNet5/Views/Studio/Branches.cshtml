@@ -1,0 +1,16 @@
+﻿@using LilFamStudioNet5.ViewModels;
+@using LilFamStudioNet5.ViewModels.Branch;
+@model JsonAnswerStatus;
+
+@{
+    ViewData["Title"] = "Филиалы - LilFam Studio";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+
+
+...

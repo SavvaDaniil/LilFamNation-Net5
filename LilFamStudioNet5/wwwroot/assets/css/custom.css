@@ -1,0 +1,164 @@
+#warning {
+	text-align: center;
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.danger {
+    color: red;
+}
+.warningDanger {
+    color:red;
+    text-align:center;
+    font-weight:bold;
+}
+.hide {
+    display: none;
+}
+    .danger.bold {
+        font-weight: 900;
+    }
+
+#alert-success, #alert-success-request {
+    position: fixed;
+    z-index: 1001;
+    background-color: green;
+    color: #fff;
+    padding: 25px;
+    font-weight: 700;
+    border-radius: 8px;
+    top: 75px;
+    right: 25px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+    #alert-success.active, #alert-success-request.active {
+        transition: all 1s ease-out;
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+.warningNotFound {
+    text-align: center;
+    font-size: 12px;
+}
+
+.status-granted {
+    color: green;
+}
+
+.status-warning {
+    color: rgb(200,200,200);
+}
+
+.status-denied {
+    color: red;
+    font-weight: 700;
+}
+
+
+.userCardAbonementForBuyingHeader {
+    font-weight:bold;
+}
+
+.userDataScheduleHeader {
+    text-align:center;
+}
+.nameOfDayOfWeek {
+    font-weight:bold;
+}
+.userCardScheduleBlock {
+    margin-bottom:4px;
+}
+.blockWithBtnAbonementOrVisit {
+    margin-bottom: 4px;
+}
+.blockWithBtnAbonementOrVisit img {
+    height:22px;
+}
+
+.modal a {
+    cursor:pointer;
+}
+.userCardBlockOfPurchaseAbonementsActive {
+    outline: 2px solid green;
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 4px;
+}
+.userCardBlockOfPurchaseAbonementsActive font {
+    font-weight: bold;
+}
+
+.userCardRowPurchaseAbonementEdits {
+    margin-top: 25px;
+    margin-left: 0px;
+}
+.userCardRowPurchaseAbonementEdits table {
+    margin-top:15px;
+}
+
+.lessons-visit-lessons {
+    margin:15px;
+}
+.lessons-visit-lessons thead th p {
+    text-align:center;
+    line-height: 1;
+}
+.lessons-visit-lessons thead th span {
+    font-size:8px;
+}
+.lessons-visit-lessons .visitLessonHeaderDate {
+    cursor:pointer;
+}
+.lessons-visit-lessons .visitLessonHeaderDate:hover {
+    background-color: #ddd;
+}
+.lessons-visit-lessons .visitLessonHeaderDate.replacement-exist {
+    background-color: #d9d9d9;
+}
+.lessons-visit-lessons .visitLessonUserData {
+    text-align:center;
+    line-height: 0.5;
+}
+.lessons-visit-lessons .visitLessonUserData.notactive {
+    opacity:0.7;
+}
+.lessons-visit-lessons .visitLessonUserData a {
+    color: #636E7B;
+}
+.lessons-visit-lessons .disconnectUserFromDanceGroup a {
+    color: red;
+    font-weight:700;
+}
+.lessons-visit-lessons .visitLessonUserVisitStatus {
+    cursor:pointer;
+}
+.lessons-visit-lessons .visitLessonUserVisitStatus:hover {
+    background-color:#ddd;
+}
+.lessons-visit-lessons .statistik-block {
+    cursor:pointer;
+}
+.lessons-visit-lessons .statistik-block:hover {
+    background-color:#ddd;
+}
+.lessons-visit-lessons .statistik-header {
+    line-height:1.1;
+    font-weight:700;
+}
+.lessons-visit-lessons .statistik-header .desc {
+    font-size:10px;
+    font-weight:200;
+}
+
+.table-analytics-title {
+    font-weight:600;
+}

@@ -1,0 +1,103 @@
+﻿@{
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+<div class="modal fade" id="modalAddUser">
+    <div class="modal-dialog" style="min-width: 350px; width: 61%">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #ffffff">
+                <button class="close" type="button" data-dismiss="modal">&times;</button>
+                <h4 align="left" class="modal-title"><img src="~/assets/plusik.png" height="30"> Добавить нового клиента</h4>
+                <!--<h4 align="left" class="modal-title">Пройдите процедуру регистрации:</h4>-->
+            </div>
+            <div class="modal-body">
+
+                <!-- Форма для регистрации -->
+                <form action="#" name="frm" method="post" role="form" class="form-horizontal" id="formNewUser">
+
+                    <!-- Блок для ввода фамилии -->
+                    <div class="form-group has-feedback">
+                        <label for="name" class="control-label col-xs-3">ФИО (Обязательно)</label>
+                        <div class="col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <input type="text" class="form-control" required="required" id="fio_new_client" name="fio" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Конец блока для ввода фамилии-->
+                    <!-- Блок для ввода телефона -->
+                    <div class="form-group has-feedback">
+                        <label for="date" class="control-label col-xs-3">Телефон</label>
+                        <div class="col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
+                                <input type="number" class="form-control" id="l_telephone" name="phone" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Конец блока для ввода телефона-->
+                    <!-- Блок для ввода комментария -->
+                    <div class="form-group has-feedback">
+                        <label for="soname" class="control-label col-xs-3">Комментарий:<br><span style="font-size:70%;">(не более 50000 символов)</span></label>
+                        <div class="col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <!--<input type="text" maxlength="50000" rows="5" class="form-control" required="required" id="change_zametki" name="change_zametki" value="<?php //echo $zametki;?>">-->
+                                <textarea maxlength="50000" rows="6" class="form-control" required="required" id="l_zametki" name="comment"></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Конец блока для ввода комментария-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="save" name="submit_reg_new_client" class="btn btn-robo" onclick="add_new_client()">Зарегистрировать нового клиента</button>
+                <!--   type="submit" -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Окончание модального окна регистрации-->
+<script>
+    var FUNCTION_DELEGATE_AFTER_ADD_USER = null;
+    function openModalAddUser(delegateFunction) {
+        FUNCTION_DELEGATE_AFTER_ADD_USER = delegateFunction;
+        $("#modalAddUser").modal();
+    }
+
+    function add_new_client() {
+        var formData = new FormData(document.getElementById('formNewUser'));
+        if (formData.get("fio") == ""){
+			alert("Поле ФИО не может быть пустым");
+		} else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+                    if (xmlhttp.status == 200) {
+                        var html = JSON.parse(xmlhttp.response);
+
+                        if (html["status"] == "success") {
+                            $("#modalAddUser").modal("hide");
+                        } else {
+                            alert("Извините, на сервере произошла неизвестная ошибка");
+                        }
+                    } else {
+                    	alert("Ошибка связи с сервером")
+                    }
+                }
+            };
+            xmlhttp.open("POST", "/api/user/add", true);
+            xmlhttp.setRequestHeader('@tokenSet.HeaderName', '@tokenSet.RequestToken');
+            xmlhttp.send(formData);
+		}
+	}
+    function delete_client() {
+
+	}
+</script>

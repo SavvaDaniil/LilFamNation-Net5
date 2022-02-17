@@ -1,0 +1,15 @@
+﻿@using LilFamStudioNet5.ViewModels;
+@using LilFamStudioNet5.ViewModels.DanceGroup;
+@model JsonAnswerStatus;
+
+@{
+    ViewData["Title"] = "Занятия - LilFam Studio";
+    @using Microsoft.AspNetCore.Antiforgery
+    @inject IAntiforgery antiforgery
+    var tokenSet = antiforgery.GetAndStoreTokens(Context);
+}
+
+
+
+
+...
